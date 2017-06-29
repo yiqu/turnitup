@@ -1,5 +1,7 @@
 <div id="volume-slider" class="wrap">
-  <svg id="volume-icon" class="volume-icon" viewBox="-1 0 33 32">
+  <button class="noselect" (mousedown)='mouseDown($event)' (mouseup)='mouseUp($event)'
+    (touchstart)='touchStart($event)' (touchend)='touchEnd($event)'>
+  <svg id="volume-icon" class="volume-icon noselect" viewBox="-1 0 33 32">
     <defs>
       <mask id="circle-mask" x="-1" y="0" width="33" height="32">
         <circle cx="-1" cy="16" r="33" fill="white" id="circle-mask-shape" />
@@ -19,7 +21,7 @@
 
     <rect x="-1" y="0" width="33" height="32" mask="url(#volume-mask)" fill="url(#grad-1)" />
   </svg>
-
+  </button> 
   <div class="volume-track">
     <span id="volume-indicator" class="volume-indicator"></span>
     <input type="hidden" name="volume" id="volume-input" />

@@ -39,13 +39,31 @@ export class ControllerComponent {
 
     this.input.value = this._volume;
 
-    this.icon.addEventListener('mousedown', () => { this.charge(); });
-    this.icon.addEventListener('mouseup', () => { this.release(this._charge); });
-    this.icon.addEventListener('touchstart', () => { this.charge(); });
-    this.icon.addEventListener('touchend', () => { this.release(this._charge); });
+    //this.icon.addEventListener('mousedown', (event) => { event.stopPropagation();this.charge(); });
+    //this.icon.addEventListener('mouseup', (event) => { event.stopPropagation();this.release(this._charge); });
+    //this.icon.addEventListener('touchstart', (event) => { event.stopPropagation();this.charge(); });
+    //this.icon.addEventListener('touchend', (event) => { event.stopPropagation();this.release(this._charge); });
    }
 
+   mouseDown(event) {
+     event.stopPropagation();
+     this.charge();
+   }
 
+   mouseUp(event) {
+    event.stopPropagation();
+    this.release(this._charge);
+   }
+
+   touchStart(event) {
+    event.stopPropagation();
+    this.charge();
+   }
+
+   touchEnd(event) {
+    event.stopPropagation();
+    this.release(this._charge);
+   }
   /**
    * Begin charge cycle
    */
