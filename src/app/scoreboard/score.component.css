@@ -2,4 +2,5 @@
   background-image: url(../../assets/cat.png);
   height: 260px;
   background-repeat: no-repeat;
+  margin-left: -50px;
 }
