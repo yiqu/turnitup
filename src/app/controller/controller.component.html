@@ -22,8 +22,16 @@
     <rect x="-1" y="0" width="33" height="32" mask="url(#volume-mask)" fill="url(#grad-1)" />
   </svg>
   </button> 
+  
   <div class="volume-track">
+    <span class="marker-0"> 0 
+      <span class="marker-50"> 50 </span>
+      <span class="marker-100"> 100 </span>
+    </span>
+    
     <span id="volume-indicator" class="volume-indicator"></span>
     <input type="hidden" name="volume" id="volume-input" />
   </div>
 </div>
+
+<game-score [userVolume]="volumeSelected" [turnChange]="turnChange"></game-score>

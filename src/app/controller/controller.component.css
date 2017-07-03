@@ -90,3 +90,21 @@ outline:none;
     transition: visibility 100ms, opacity 100ms;
     width: 12px;
 }
+
+.marker-0 {
+  padding-top: 12px;
+  display: inherit;
+  padding-left: 2px;
+  font-family: "Press Start 2P";
+  font-size: 0.7rem;
+}
+
+.marker-100 {
+  float: right;
+  font-size: 0.6rem;
+}
+
+.marker-50 {
+  font-size: 0.6rem;
+  margin-left: 69px;
+}

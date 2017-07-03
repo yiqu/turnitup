@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScoreService } from '../shared/score.service';
 
 @Component({
   moduleId: module.id,
@@ -6,84 +7,118 @@ import { Component } from '@angular/core';
   templateUrl: 'controller.component.html',
   styleUrls: ['./controller.component.css']
 })
-
 export class ControllerComponent {
 
-  slider;
-  icon;
-  indicator;
-  shape;
-  input;
-  _lock;
-  _charging;
-  _charge;
-  _volume;
+  // HTML Elements var's
+  slider: HTMLElement = null;
+  icon: HTMLElement = null;
+  indicator: HTMLElement = null;
+  shape: HTMLElement = null;
+  input: any = null;
+  lock: boolean;
+  charging: boolean;
+  _charge: number;
+  _volume: number;
+  volumeSelected: number;
+  turnChange: number = 0;
   
-    constructor(){
+
+  /**
+   * Constructor
+   * 
+   */
+  constructor(){}
 
 
-  }
-
-    // implement OnInit's `ngOnInit` method
+  /**
+   * On init. Get the html elements after it has rendered on the page.
+   * 
+   */
   ngOnInit() { 
-    this.slider    = document.getElementById('volume-slider');
-    this.icon      = document.getElementById('volume-icon');
+    this.slider = document.getElementById('volume-slider');
+    this.icon = document.getElementById('volume-icon');
     this.indicator = document.getElementById('volume-indicator');
-    this.shape     = document.getElementById('circle-mask-shape');
-    this.input     = document.getElementById('volume-input');
+    this.shape = document.getElementById('circle-mask-shape');
+    this.input = document.getElementById('volume-input');
 
-    this._lock     = false;
-    this._charging = false;
-    this._charge   = 0;
-    this._volume   = 0;
+    this.lock = false;
+    this.charging = false;
+    this._charge = 0;
+    this._volume = 0;
 
+    // Set init volume to 0
     this.input.value = this._volume;
-
     //this.icon.addEventListener('mousedown', (event) => { event.stopPropagation();this.charge(); });
     //this.icon.addEventListener('mouseup', (event) => { event.stopPropagation();this.release(this._charge); });
     //this.icon.addEventListener('touchstart', (event) => { event.stopPropagation();this.charge(); });
     //this.icon.addEventListener('touchend', (event) => { event.stopPropagation();this.release(this._charge); });
    }
 
+
+  /**
+   * Mouse down event handler
+   * 
+   */
    mouseDown(event) {
      event.stopPropagation();
      this.charge();
    }
 
+
+  /**
+   * Mouse up event handler
+   * 
+   */
    mouseUp(event) {
     event.stopPropagation();
     this.release(this._charge);
    }
 
+
+  /**
+   * Mobile press down event handler
+   * 
+   */
    touchStart(event) {
     event.stopPropagation();
     this.charge();
    }
 
+
+  /**
+   * Mobile press let go event handler
+   * 
+   */
    touchEnd(event) {
     event.stopPropagation();
     this.release(this._charge);
    }
+
+
   /**
    * Begin charge cycle
+   * 
    */
-  charge(){
-    if(this._lock){ return false; }
-    this._lock = true;
+  charge(): boolean {
+    if (this.lock) { 
+      return false; 
+    }
 
-    // Reset
-    this._charge   = 0;
-    this._charging = true;
+    this.lock = true;
+
+    // Reset volume
+    this._charge = 0;
+    this.charging = true;
 
     // Hide indicator
     this.indicator.style.visibility = 'hidden';
-    this.indicator.style.opacity    = '0';
+    this.indicator.style.opacity = '0';
 
     /**
      * Charge loop
      */
     let cycle = () => {
-      if(this._charging && ++this._charge < 100){
+      if (this.charging && ++this._charge < 100) {
         requestAnimationFrame(() => {
           cycle();
         });
@@ -100,40 +135,44 @@ export class ControllerComponent {
 
   /**
    * Release and fire based on charge
+   * 
    * @param  {float} charge
+   * 
    */
-  release(charge){
+  release(charge): void {
     // Reset charge animation
-    this._charging = false;
-    requestAnimationFrame(() => { this.shape.style.transform = `scale(0)`; });
+    this.charging = false;
+    requestAnimationFrame(() => { 
+      this.shape.style.transform = `scale(0)`; 
+    });
 
     // Animation vars
-    let y_cap    = charge * 0.35,
-        y_start  = -0.3 * charge,
-        x_cap    = charge * 2,
-        x_start  = -10,
+    let y_cap = charge * 0.35,
+        y_start = -0.3 * charge,
+        x_cap = charge * 2,
+        x_start = -10,
         duration = 20 + (4 * charge),
-        start    = new Date().getTime(),
-        volume   = this._volume,
+        start = new Date().getTime(),
+        volume = this._volume,
         rotate;
 
     // Y animation
     let y_swap = duration * 0.55;
 
-    let y_duration_up   = y_swap,
+    let y_duration_up = y_swap,
         y_duration_down = duration - y_swap;
 
-    let y           = y_start,
-        y_diff_up   = -y_cap,
+    let y = y_start,
+        y_diff_up = -y_cap,
         y_diff_down = (y_cap - y_start);
 
     // X animation
-    let x      = x_cap,
+    let x = x_cap,
         x_diff = x_cap - 10;
 
     // Display indicator
     this.indicator.style.visibility = 'visible';
-    this.indicator.style.opacity    = '1';
+    this.indicator.style.opacity = '1';
 
     /**
      * Animation loop
@@ -141,47 +180,53 @@ export class ControllerComponent {
     let animate = () => {
       let elapsed = new Date().getTime() - start;
 
-      if(elapsed < duration){
+      if (elapsed < duration) {
         // Animate
-        requestAnimationFrame(() => { animate(); });
+        requestAnimationFrame(() => { 
+          animate(); 
+        });
 
-        if(elapsed < y_duration_up){
+        if (elapsed < y_duration_up) {
           // Y up
           y = this.easeOut(elapsed, y_start, y_diff_up, y_duration_up);
-        }else{
+        } else {
           // Y down
           y = this.easeIn(elapsed - y_duration_up, y_start - y_cap, y_diff_down, y_duration_down);
         }
 
         // Set values
-        x            = this.linearTween(elapsed, 0, x_diff, duration);
-        rotate       = this.easeInOut(elapsed, -0.35 * this._charge, 0.35 * this._charge, duration);
+        x = this.linearTween(elapsed, 0, x_diff, duration);
+        rotate = this.easeInOut(elapsed, -0.35 * this._charge, 0.35 * this._charge, duration);
         this._volume = this.easeOut(elapsed, volume, charge - volume, duration);
-      }else{
+      } else {
         // End of animation
-        this._lock = false;
+        this.lock = false;
 
         // Set values
-        x            = x_cap;
-        y            = 0;
-        rotate       = 0;
+        x = x_cap;
+        y = 0;
+        rotate = 0;
         this._volume = charge;
       }
 
       // Render values
-      this.icon.style.transform      = `rotate(${rotate}deg)`;
+      this.icon.style.transform = `rotate(${rotate}deg)`;
       this.indicator.style.transform = `translateX(${x}px) translateY(${y}px)`;
-      this.input.value               = this._volume;
+      this.input.value = this._volume;
     };
 
     animate();
+    
+    this.volumeSelected = this._charge;
+    this.turnChange ++;
+    //console.log('your volume: '  + this.volumeSelected + '. Turn: '+this.turnChange);
   }
 
 
   /**
    * Linear progression
    */
-  linearTween(t, b, c, d){
+  linearTween(t, b, c, d): number {
     return c*t/d + b;
   }
 
@@ -189,7 +234,7 @@ export class ControllerComponent {
   /**
    * Cubic ease-in progression
    */
-  easeIn(t, b, c, d){
+  easeIn(t, b, c, d): number {
     t /= d;
     return c*t*t*t + b;
   }
@@ -198,7 +243,7 @@ export class ControllerComponent {
   /**
    * Cubic ease-out progression
    */
-  easeOut(t, b, c, d){
+  easeOut(t, b, c, d): number {
     t /= d;
     t--;
     return c*(t*t*t + 1) + b;
@@ -208,7 +253,7 @@ export class ControllerComponent {
   /**
    * Cubic ease-in-out progression
    */
-  easeInOut(t, b, c, d){
+  easeInOut(t, b, c, d): number {
     t /= d/2;
     if (t < 1){
       return c/2*t*t*t + b;

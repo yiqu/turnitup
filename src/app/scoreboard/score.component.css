@@ -1,6 +1,69 @@
+/* ----------- Desktop ----------- */
 .cat {
-  background-image: url(../../assets/cat2.png);
+  background-image: url(../../assets/cat3.png);
   height: 260px;
   background-repeat: no-repeat;
   margin-left: -50px;
+}
+
+.request-message {
+  font-family: 'Patrick Hand SC', cursive;
+  position: relative;
+  top: -245px;
+  left: 50px;
+  font-weight: 600;
+  color: #737373;
+  font-size: 1.4rem;
+  word-wrap: break-word;
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    .cat {
+      background-image: url(../../assets/cat4.png);
+      margin-left: -80px;
+    }
+    .request-message {
+      position: absolute;
+      top: 280px;
+      left: 162px;
+      max-width: 145px;
+    }
+}
+
+/* ----------- iPhone 6 ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) {
+    .cat {
+      background-image: url(../../assets/cat5.png);
+      margin-left: -50px;
+    }
+    .request-message {
+      position: absolute;
+      top: 280px;
+      left: 202px;
+      max-width: 145px;
+    }
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) { 
+    .cat {
+      background-image: url(../../assets/cat6.png);
+      margin-left: -50px;
+    }
+    .request-message {
+      position: absolute;
+      top: 280px;
+      left: 202px;
+      max-width: 190px;
+    }
 }
