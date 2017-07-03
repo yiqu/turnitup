@@ -21,7 +21,7 @@ export class ScoreComponent implements OnChanges{
   // cat's request
   requestMessage: string;
   // result message
-  resultMessage: string;
+  resultMessage: string = "Hi there, can you help me?";
 
   /**
    * Constructor
@@ -59,7 +59,7 @@ export class ScoreComponent implements OnChanges{
           this.resultMessage = "That's not what I asked for!!!";
           break;
         case (difference <= 10 && difference > 5): //between 5 and 10*:
-          this.resultMessage = "Almost, but I asked for ";
+          this.resultMessage = "Almost, but I asked for " + this.goalVolume;
           break;
         case (difference <= 5 && difference > 1): //between 1 and 5*:
           this.resultMessage = "Close... But not close enough!";

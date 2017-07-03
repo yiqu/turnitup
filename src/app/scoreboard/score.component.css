@@ -7,14 +7,43 @@
 }
 
 .request-message {
-  font-family: 'Patrick Hand SC', cursive;
+font-family: 'Patrick Hand SC', cursive;
+position: relative;
+top: -155px;
+left: 184px;
+font-weight: 600;
+color: #737373;
+font-size: 1.4rem;
+word-wrap: break-word;
+
+
+}
+
+.user-volume-message {
   position: relative;
-  top: -245px;
-  left: 50px;
-  font-weight: 600;
-  color: #737373;
+  left: 28px;
+  font-family: 'Patrick Hand SC', cursive;
   font-size: 1.4rem;
+  top: -80px;
+}
+
+.goal-message {
+  position: relative;
+  left: -70px;
+  top: -75px;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 1.4rem;
+}
+
+.cat-message {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 1.4rem;
+  font-weight: 600;
+  top: -240px;
+  position: relative;
+  left: -30px;
   word-wrap: break-word;
+
 }
 
 /* ----------- iPhone 4 and 4S ----------- */
@@ -30,6 +59,12 @@
       top: 280px;
       left: 162px;
       max-width: 145px;
+    }
+    .goal-message {
+      left: 80px;
+    }
+    .user-volume-message {
+      left: 73px;
     }
 }
 
