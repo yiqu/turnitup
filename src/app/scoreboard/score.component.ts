@@ -15,28 +15,28 @@ export class ScoreComponent implements OnChanges{
   turnChange: number;
 
   // the first goal when page loads
-  goalVolume: number = 0;
+  goalVolume: number = 5;
   // User's result
   userResult: number;
   // cat's request
   requestMessage: string;
   // result message
-  resultMessage: string = "Hi there, can you help me?";
+  resultMessage: string = "Hi there, can you help me...";
+  // previous goal
+  previousGoalVolume: number;
+
 
   /**
    * Constructor
    * 
    */
   constructor() {}
+  
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    //console.log(changes['userVolume']);
-    //console.log(changes['turnChange']);
 
-    // Set new goal volume, and new request message
-    this.goalVolume = 100;
-    this.requestMessage = "Hi human! Give me a ";
-    this.requestMessage = this.requestMessage + this.goalVolume;
+    this.requestMessage = "Turn the vol. to " + this.goalVolume + " pls..";
+    this.previousGoalVolume = this.goalVolume;
 
     // Record how user did, and turn number
     if (changes['userVolume'] !== undefined) {
@@ -53,25 +53,45 @@ export class ScoreComponent implements OnChanges{
 
       switch (true) {
         case (difference > 15): //bigger than 15
-          this.resultMessage = "Are you even trying???";
+          this.resultMessage = this.userResult + "? Are you even trying? Whatever...";
+          this.updateRequestMessage();
           break;
         case (difference <= 15 && difference > 10): //between 10 and 15*
-          this.resultMessage = "That's not what I asked for!!!";
+          this.resultMessage = "That's not what I asked for! Actually...";
+          this.updateRequestMessage();
           break;
         case (difference <= 10 && difference > 5): //between 5 and 10*:
-          this.resultMessage = "Almost, but I asked for " + this.goalVolume;
+          this.resultMessage = "Almost.. but I asked for " + this.goalVolume + '. Forget it...';
+          this.updateRequestMessage();
           break;
-        case (difference <= 5 && difference > 1): //between 1 and 5*:
-          this.resultMessage = "Close... But not close enough!";
+        case (difference <= 5 && difference >= 1): //between 1 and 5*:
+          this.resultMessage = "Close... But not close enough! Instead...";
+          this.updateRequestMessage();
           break;
         case (difference === 0): // exactly right
-          this.resultMessage = "Thank you Human!";
+          this.resultMessage = "Perfect! Thank you, kind human!";
+          this.updateRequestMessage(true);
           break;
         default:
             this.resultMessage = "Meow";
       }
+
     }
 
   }
 
+  updateRequestMessage(correct: boolean = false): void {
+    // Set new goal volume, and new request message
+    this.goalVolume = this.generateGoal(1, 10);
+    
+    if (correct) {
+      this.requestMessage = "Wait. turn to " + this.goalVolume + " now..";
+    } else {
+      this.requestMessage = "Turn the vol. to " + this.goalVolume + " pls..";
+    }
+  }
+
+  generateGoal(min, max): number {
+    return Math.floor(Math.random()*(max-min+1)+min);
+  }
 }

@@ -1,10 +1,10 @@
 <div class="wrap center">
   <div class="cat"></div>
-   <span class="request-message">{{requestMessage}} !</span>
-   <span class="cat-message">{{resultMessage}}</span>
-   <span class="goal-message">Goal: {{goalVolume}}</span><br>
-   <span class="user-volume-message">You: <span style="font-weight:600">{{userResult}}</span></span>
+    <p class="request-message">{{requestMessage}}</p>
+    <p class="cat-message">{{resultMessage}}</p>
+    <p class="goal-message">New goal: {{goalVolume}}</p>
+    <p [style.display]="userResult===undefined?'none':'block'" class="user-volume-message">
+      Result: <span style="color:#009933;font-weight:600">{{userResult}}</span>.
+      When W.B. asked for <span style="color:#8600b3;font-weight:600">{{previousGoalVolume}}.</span>
+    </p>
 </div>
-
-{{requestMessage}}
-{{resultMessage}}
