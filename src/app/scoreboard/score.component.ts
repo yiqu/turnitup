@@ -82,7 +82,7 @@ export class ScoreComponent implements OnChanges{
 
   updateRequestMessage(correct: boolean = false): void {
     // Set new goal volume, and new request message
-    this.goalVolume = this.generateGoal(1, 10);
+    this.goalVolume = this.generateGoal(10, 99);
     
     if (correct) {
       this.requestMessage = "Wait. turn to " + this.goalVolume + " now..";

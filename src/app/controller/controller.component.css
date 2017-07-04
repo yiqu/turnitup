@@ -10,6 +10,15 @@ body {
     width: 300px;
 }
 
+/* ----------- iPhone 4 and 4S ----------- */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    #volume-slider {
+      padding: 10px 0;
+    }
+}
+
 .volume-icon {
   cursor: pointer;
   height: 60px;

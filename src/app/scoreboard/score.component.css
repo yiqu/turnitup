@@ -20,12 +20,13 @@
 
 .user-volume-message {
   position: relative;
-  left: 180px;
+  left: 150px;
   font-family: 'Patrick Hand SC', cursive;
   font-size: 1.2rem;
-  top: -520px;
+  top: -530px;
   text-align: left;
   color: #737373;
+  max-width: 256px;
 }
 
 .goal-message {
@@ -45,7 +46,7 @@
   font-weight: 600;
   top: -310px;
   position: relative;
-  left: 198px;
+  left: 195px;
   word-wrap: break-word;
   text-align: left;
   max-width: 210px;
@@ -61,17 +62,29 @@
       background-image: url(../../assets/cat4.png);
       margin-left: -80px;
     }
+    .cat-message {
+      font-family: 'Patrick Hand SC', cursive;
+      font-size: 1.2rem;
+      top: -270px;
+      left: 170px;
+      max-width: 130px;
+    }
     .request-message {
       position: absolute;
-      top: 280px;
-      left: 162px;
-      max-width: 145px;
+      top: 350px;
+      left: 182px;
+      max-width: 125px;
+      font-size: 1.2rem;
     }
     .goal-message {
-      left: 80px;
+      left: 190px;
+      top: -200px;
+      max-width: 110px;
     }
     .user-volume-message {
-      left: 73px;
+      left: 35px;
+      top: -475px;
+      max-width: 261px;
     }
 }
 
@@ -84,11 +97,26 @@
       background-image: url(../../assets/cat5.png);
       margin-left: -50px;
     }
+    .cat-message {
+      font-size: 1.2rem;
+      top: -270px;
+      left: 205px;
+      max-width: 130px;
+    }
     .request-message {
       position: absolute;
-      top: 280px;
-      left: 202px;
+      top: 350px;
+      left: 212px;
       max-width: 145px;
+    }
+    .goal-message {
+      left: 225px;
+      top: -200px;
+      max-width: 110px;
+    }
+    .user-volume-message {
+      max-width: 259px;
+      left: 70px;
     }
 
 }
@@ -102,10 +130,20 @@
       background-image: url(../../assets/cat6.png);
       margin-left: -50px;
     }
+    .cat-message {
+      font-size: 1.2rem;
+      top: -260px;
+      left: 205px;
+      max-width: 160px;
+    }
+    .user-volume-message {
+      max-width: 259px;
+      left: 95px;
+    }
     .request-message {
       position: absolute;
-      top: 280px;
-      left: 202px;
+      top: 365px;
+      left: 212px;
       max-width: 190px;
     }
 }
