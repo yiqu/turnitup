@@ -1,5 +1,7 @@
 # Turnitup
 
+![caticon](https://github.com/yiqu/turnitup/blob/master/src/caticon.png?raw=true "W.B.")
+
 Simple game that is both browser and mobile friendly. To play: https://yiqu.github.io/turnitup/
 
 ## Fork and Run
