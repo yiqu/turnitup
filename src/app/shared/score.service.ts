@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ScoreService {
 
-  volume: number;
-  
+  isTouchDevice: boolean = false;
+
   /**
    * Constructor
    */

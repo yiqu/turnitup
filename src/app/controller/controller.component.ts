@@ -27,7 +27,7 @@ export class ControllerComponent {
    * Constructor
    * 
    */
-  constructor(){}
+  constructor(public scoreService: ScoreService){}
 
 
   /**
@@ -48,51 +48,68 @@ export class ControllerComponent {
 
     // Set init volume to 0
     this.input.value = this._volume;
-    //this.icon.addEventListener('mousedown', (event) => { event.stopPropagation();this.charge(); });
-    //this.icon.addEventListener('mouseup', (event) => { event.stopPropagation();this.release(this._charge); });
-    //this.icon.addEventListener('touchstart', (event) => { event.stopPropagation();this.charge(); });
-    //this.icon.addEventListener('touchend', (event) => { event.stopPropagation();this.release(this._charge); });
+
+    // Decide if device is Touch or Mouse
+    this.scoreService.isTouchDevice = this.isTouchDevice();
    }
+
+
+  /**
+   * Detect if the device is a touch based device. Not 100% stable.
+   * 
+   */
+  isTouchDevice(): boolean {
+    return 'ontouchstart' in window        // works on most browsers 
+        || 'onmsgesturechange' in window;  // works on IE10 with some false positives
+  };
 
 
   /**
    * Mouse down event handler
    * 
    */
-   mouseDown(event) {
-     event.stopPropagation();
-     this.charge();
-   }
+  mouseDown(event) {
+    event.preventDefault();
+    if (!this.scoreService.isTouchDevice) {
+      this.charge();
+    }
+  }
 
 
   /**
    * Mouse up event handler
    * 
    */
-   mouseUp(event) {
-    event.stopPropagation();
-    this.release(this._charge);
-   }
+  mouseUp(event) {
+    event.preventDefault();
+    if (!this.scoreService.isTouchDevice) {
+      this.release(this._charge);
+    }
+  }
 
 
   /**
    * Mobile press down event handler
    * 
    */
-   touchStart(event) {
-    event.stopPropagation();
-    this.charge();
-   }
+  touchStart(event) {
+    event.preventDefault();
+    if (this.scoreService.isTouchDevice) {
+      this.charge();
+    }
+  }
 
 
   /**
    * Mobile press let go event handler
    * 
    */
-   touchEnd(event) {
-    event.stopPropagation();
-    this.release(this._charge);
-   }
+  touchEnd(event) {
+    event.preventDefault();
+    if (this.scoreService.isTouchDevice) {
+      this.release(this._charge);
+    }
+  }
 
 
   /**

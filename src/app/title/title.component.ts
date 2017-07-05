@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScoreService } from '../shared/score.service';
 
 @Component({
   moduleId: module.id,
@@ -6,11 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: 'title.component.html',
   styleUrls: ['./title.component.css']
 })
-
 export class TitleComponent {
 
-  gameTitle: string = "Turn It Up!";
+  gameTitle: string = "Turn It Up";
 
-  constructor() {}
+  constructor(public scoreService: ScoreService){}
 
 }
