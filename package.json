@@ -1,6 +1,6 @@
 {
-  "name": "game-app",
-  "version": "0.0.0",
+  "name": "turn-it-up",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
