@@ -15,7 +15,7 @@ export class ScoreComponent implements OnChanges{
   turnChange: number;
 
   // the first goal when page loads
-  goalVolume: number = 5;
+  goalVolume: number = 45;
   // User's result
   userResult: number;
   // cat's request
