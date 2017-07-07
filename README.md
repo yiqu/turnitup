@@ -1,4 +1,4 @@
-# Turnitup
+# Turn It Up!
 
 ![caticon](https://github.com/yiqu/turnitup/blob/master/src/caticon.png?raw=true "W.B.")
 
