@@ -27,11 +27,12 @@
     <!-- Off By Column -->
     <ng-container cdkColumnDef="difference">
       <md-header-cell *cdkHeaderCellDef md-sort-header> Off By </md-header-cell>
-      <md-cell *cdkCellDef="let row" class="table-cell"> {{row.difference}} </md-cell>
+      <md-cell *cdkCellDef="let row" class="table-cell"> {{row.difference | winner}} </md-cell>
     </ng-container>
 
 
     <md-header-row *cdkHeaderRowDef="displayedColumns" class="header-table-row"></md-header-row>
-    <md-row *cdkRowDef="let row; columns: displayedColumns;" class="table-row"></md-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;" 
+      [ngClass]="row.difference==='0'?'table-row-green':'table-row'"></md-row>
   </md-table>
 </div>

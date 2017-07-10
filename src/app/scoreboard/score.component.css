@@ -194,6 +194,11 @@
   font-size: 1.4rem;
 }
 
+.table-row-green {
+  font-family: 'Patrick Hand SC', cursive;
+  background-color: #b3ffb3;
+}
+
 .table {
   background-color: #F6F5EC;
 }

@@ -46,7 +46,6 @@ export class ScoreComponent implements OnChanges {
   
   ngOnInit() {
     this.dataSource = new ResultDataSource(this.resultDataStore, this.sort);
-    console.log(this.resultDataStore); 
   }
 
 
@@ -60,7 +59,6 @@ export class ScoreComponent implements OnChanges {
     if (changes['userVolume'] !== undefined) {
       this.userResult = changes['userVolume'].currentValue;
     }
-    console.log('Goal is: '+ this.goalVolume + '. You hit: ' + this.userResult + '. Turn: ' + this.turnChange);
 
     // compare results
     if (this.userResult === undefined) {
@@ -102,7 +100,7 @@ export class ScoreComponent implements OnChanges {
 
   updateRequestMessage(correct: boolean = false): void {
     // Set new goal volume, and new request message
-    this.goalVolume = this.generateGoal(10, 99);
+    this.goalVolume = this.generateGoal(99, 100);
     
     if (correct) {
       this.requestMessage = "Wait. turn to " + this.goalVolume + " now..";

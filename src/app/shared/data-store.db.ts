@@ -16,7 +16,7 @@ export class ResultDataStore {
   /** Adds a new result to the datastore. */
   appendResult(turn: number, result: number, goal: number) {
     let userResult = result + ' on ' + goal;
-    let difference = goal - result;
+    let difference = Math.abs(goal - result);
 
     const copiedData = this.data.slice();
     copiedData.unshift(this.addNewResult(turn.toString(), userResult, difference.toString()));
