@@ -10,3 +10,7 @@ p {
   line-height: 1rem;
   letter-spacing: -1px;
 }
+
+.version {
+  font-size: 0.7rem;
+}
