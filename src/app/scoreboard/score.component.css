@@ -163,3 +163,37 @@
       max-width: 190px;
     }
 }
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 33rem;
+  position: relative;
+  top: -10rem;
+}
+
+.mat-table {
+  overflow: auto;
+}
+
+.mat-header-cell .mat-sort-header-sorted {
+  color: black;
+}
+
+.header-table-row {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.table-row {
+  font-family: 'Patrick Hand SC', cursive;
+}
+
+.table-cell {
+  font-size: 1.4rem;
+}
+
+.table {
+  background-color: #F6F5EC;
+}

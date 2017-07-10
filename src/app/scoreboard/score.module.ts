@@ -3,13 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ScoreComponent } from './score.component';
 import { ScoreService } from '../shared/score.service';
 
+import { CdkTableModule } from '@angular/cdk';
+import { MdSortModule, MdTableModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     ScoreComponent
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    CdkTableModule,
+    MdSortModule,
+    MdTableModule
   ],
 
   providers: [],

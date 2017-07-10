@@ -1,4 +1,7 @@
-import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange, ViewChild } from '@angular/core';
+import { MdSort } from '@angular/material';
+import { ResultDataStore } from '../shared/data-store.db';
+import { ResultDataSource } from '../shared/data-source.db';
 import { ScoreService } from '../shared/score.service';
 
 @Component({
@@ -7,7 +10,7 @@ import { ScoreService } from '../shared/score.service';
   templateUrl: 'score.component.html',
   styleUrls: ['./score.component.css']
 })
-export class ScoreComponent implements OnChanges{
+export class ScoreComponent implements OnChanges {
 
   @Input() 
   userVolume: number;
@@ -26,7 +29,14 @@ export class ScoreComponent implements OnChanges{
   previousGoalVolume: number;
   // game won
   didUserWin: boolean = false;
+  // result table column order
+  displayedColumns = ['turn', 'result', 'difference'];
+  // datastore and source
+  resultDataStore = new ResultDataStore();
+  dataSource: ResultDataSource | null;
 
+  @ViewChild(MdSort) 
+  sort: MdSort;
 
   /**
    * Constructor
@@ -34,6 +44,11 @@ export class ScoreComponent implements OnChanges{
    */
   constructor() {}
   
+  ngOnInit() {
+    this.dataSource = new ResultDataSource(this.resultDataStore, this.sort);
+    console.log(this.resultDataStore); 
+  }
+
 
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
 
@@ -52,7 +67,8 @@ export class ScoreComponent implements OnChanges{
       // first turn
     } else {
       let difference = Math.abs(this.goalVolume - this.userResult);
-      console.log('difference: ' + difference);
+
+      this.resultDataStore.appendResult(this.turnChange, this.userResult, this.goalVolume);
 
       switch (true) {
         case (difference > 15): //bigger than 15
