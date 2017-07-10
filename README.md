@@ -6,6 +6,8 @@ Simple game that is both browser and mobile friendly. To play: https://yiqu.gith
 
 ## Fork and Run
 
+Install Angular-CLI `npm install -g @angular/cli`
+
 Run `ng serve` , navigate to `localhost:4200`
 
 ## Build
