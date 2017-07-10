@@ -24,6 +24,8 @@ export class ScoreComponent implements OnChanges{
   resultMessage: string = "Hi there, can you help me...";
   // previous goal
   previousGoalVolume: number;
+  // game won
+  didUserWin: boolean = false;
 
 
   /**
@@ -37,6 +39,7 @@ export class ScoreComponent implements OnChanges{
 
     this.requestMessage = "Turn the vol. to " + this.goalVolume + " pls..";
     this.previousGoalVolume = this.goalVolume;
+    this.didUserWin = false;
 
     // Record how user did, and turn number
     if (changes['userVolume'] !== undefined) {
@@ -70,6 +73,7 @@ export class ScoreComponent implements OnChanges{
           break;
         case (difference === 0): // exactly right
           this.resultMessage = "Perfect! Thank you, kind human!";
+          this.didUserWin = true;
           this.updateRequestMessage(true);
           break;
         default:

@@ -6,6 +6,10 @@
   margin-left: -50px;
 }
 
+.cat-win {
+  background-image: url(../../assets/cat3-win.png);
+}
+
 .request-message {
   font-family: 'Patrick Hand SC', cursive;
   position: relative;
@@ -62,6 +66,10 @@
       background-image: url(../../assets/cat4.png);
       margin-left: -80px;
     }
+    .cat-win {
+      background-image: url(../../assets/cat4-win.png);
+    }
+
     .cat-message {
       font-family: 'Patrick Hand SC', cursive;
       font-size: 1.2rem;
@@ -77,14 +85,14 @@
       font-size: 1.2rem;
     }
     .goal-message {
-      left: 190px;
+      left: 180px;
       top: -200px;
-      max-width: 110px;
+      max-width: 118px;
     }
     .user-volume-message {
-      left: 35px;
+      left: 32px;
       top: -475px;
-      max-width: 261px;
+      max-width: 265px;
     }
 }
 
@@ -97,6 +105,10 @@
       background-image: url(../../assets/cat5.png);
       margin-left: -50px;
     }
+    .cat-win {
+      background-image: url(../../assets/cat5-win.png);
+    }
+
     .cat-message {
       font-size: 1.2rem;
       top: -270px;
@@ -115,8 +127,8 @@
       max-width: 140px;
     }
     .user-volume-message {
-      max-width: 259px;
-      left: 70px;
+      max-width: 265px;
+      left: 60px;
     }
 
 }
@@ -130,6 +142,10 @@
       background-image: url(../../assets/cat6.png);
       margin-left: -50px;
     }
+    .cat-win {
+      background-image: url(../../assets/cat6-win.png);
+    }
+
     .cat-message {
       font-size: 1.2rem;
       top: -260px;

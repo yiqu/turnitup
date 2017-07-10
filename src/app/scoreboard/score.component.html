@@ -1,5 +1,5 @@
 <div class="wrap center">
-  <div class="cat"></div>
+  <div [ngClass]="didUserWin === true?'cat cat-win':'cat'"></div>
     <p class="request-message">{{requestMessage}}</p>
     <p class="cat-message">{{resultMessage}}</p>
     <p class="goal-message">New goal: {{goalVolume}}</p>
