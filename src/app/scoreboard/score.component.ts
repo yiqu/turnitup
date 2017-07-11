@@ -22,7 +22,7 @@ export class ScoreComponent implements OnChanges {
   turnChange: number;
 
   // the first goal when page loads
-  goalVolume: number = 45;
+  goalVolume: number = this.generateGoal(10, 99);
   // User's result
   userResult: number;
   // cat's request
@@ -111,7 +111,7 @@ export class ScoreComponent implements OnChanges {
    */
   updateRequestMessage(correct: boolean = false): void {
     // Set new goal volume, and new request message
-    this.goalVolume = this.generateGoal(0, 1);
+    this.goalVolume = this.generateGoal(10, 99);
     
     if (correct) {
       this.requestMessage = "Now.. turn to " + this.goalVolume + " pls..";
