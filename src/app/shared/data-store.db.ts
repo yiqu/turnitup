@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { UserResult } from './user-result.model';
 
 /**
- * Result data store
+ * Result data store.
  * 
  */
 export class ResultDataStore {

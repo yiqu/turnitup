@@ -32,6 +32,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* disable outline around volume icon */
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -40,64 +41,64 @@ body {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
   supported by Chrome and Opera */
-    background-color: white;
+  background-color: white;
   border: none;
   outline:none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
--webkit-tap-highlight-color: transparent;
-  }
+  -webkit-tap-highlight-color: transparent;
+}
 
 
 .noselect:hover {
   background-color: white;
   border: none;
-outline:none;
+  outline:none;
 }
 
 .noselect:active {
   background-color: white;
   border: none;
-outline:none;
+  outline:none;
 }
 
 .noselect:focus {
   background-color: white;
   border: none;
-outline:none;
-
+  outline:none;
 }
+
 .volume-icon .volume-icon-bg {
-    fill: #cbc8ce;
-    transition: fill 300ms;
+  fill: #cbc8ce;
+  transition: fill 300ms;
 }
 
 .volume-icon:hover .volume-icon-bg {
-    fill: #b6aebf;
+  fill: #b6aebf;
 }
 
 #circle-mask-shape {
-    transform: scale(0);
-    transform-origin: center center;
+  transform: scale(0);
+  transform-origin: center center;
 }
 
 .volume-track {
-    background-color: #e1dee5;
-    border-radius: 3px;
-    flex: 1;
-    height: 4px;
-    margin-left: 5px;
-    position: relative;
+  background-color: #e1dee5;
+  border-radius: 3px;
+  flex: 1;
+  height: 4px;
+  margin-left: 5px;
+  position: relative;
 }
 
 .volume-indicator {
-    background-color: #6e33a5;
-    border-radius: 50%;
-    height: 12px;
-    left: 0;
-    position: absolute;
-    top: -4px;
-    transition: visibility 100ms, opacity 100ms;
-    width: 12px;
+  background-color: #6e33a5;
+  border-radius: 50%;
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: -4px;
+  transition: visibility 100ms, opacity 100ms;
+  width: 12px;
 }
 
 .marker-0 {

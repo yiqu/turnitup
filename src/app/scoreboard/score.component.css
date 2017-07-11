@@ -191,7 +191,7 @@
 }
 
 .table-cell {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .table-row-green {
@@ -199,6 +199,16 @@
   background-color: #b3ffb3;
 }
 
+.table-row-light-green {
+  background-color: #e6ffe6;
+}
+
 .table {
   background-color: #F6F5EC;
+}
+
+.scoreboard {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 600;
 }

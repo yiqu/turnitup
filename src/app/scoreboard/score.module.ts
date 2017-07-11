@@ -5,7 +5,10 @@ import { ScoreService } from '../shared/score.service';
 import { WinnerDisplayPipe } from '../pipes/score.pipe';
 
 import { CdkTableModule } from '@angular/cdk';
-import { MdSortModule, MdTableModule } from '@angular/material';
+import { 
+  MdCardModule, 
+  MdSortModule, 
+  MdTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,7 @@ import { MdSortModule, MdTableModule } from '@angular/material';
   imports: [
     CommonModule,
     CdkTableModule,
+    MdCardModule,
     MdSortModule,
     MdTableModule
   ],

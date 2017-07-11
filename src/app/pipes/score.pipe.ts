@@ -1,6 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
+
 /*
- * Display for when user scored a difference of 0.
+ * Display based on the goal difference.
+ * If difference is 0, display Perfect!
+ * If difference is between 1-5, display So Close! (value).
+ * 
  * Usage:
  *   value | winner
  * Example:
@@ -10,6 +14,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({name: 'winner'})
 export class WinnerDisplayPipe implements PipeTransform {
   transform(value: string): string {
-    return value === "0" ? "Perfect!" : value;
+    if (parseInt(value) > 0 && parseInt(value) <= 5) {
+      return "So Close! (" + value + ")";
+    } else if (value === "0") {
+      return "Perfect!";
+    } else {
+      return value;
+    }
   }
 }

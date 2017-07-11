@@ -4,6 +4,10 @@ import { ResultDataStore } from '../shared/data-store.db';
 import { ResultDataSource } from '../shared/data-source.db';
 import { ScoreService } from '../shared/score.service';
 
+/**
+ * Score component consists of score calculation logic.
+ * 
+ */
 @Component({
   moduleId: module.id,
   selector: 'game-score',
@@ -98,18 +102,33 @@ export class ScoreComponent implements OnChanges {
 
   }
 
+  /**
+   * Update W.B.'s new request message for another round of playing
+   * based on user's previous goal difference.
+   * 
+   * @param {boolean} correct if user's goal difference is 0
+   * 
+   */
   updateRequestMessage(correct: boolean = false): void {
     // Set new goal volume, and new request message
-    this.goalVolume = this.generateGoal(99, 100);
+    this.goalVolume = this.generateGoal(0, 1);
     
     if (correct) {
-      this.requestMessage = "Wait. turn to " + this.goalVolume + " now..";
+      this.requestMessage = "Now.. turn to " + this.goalVolume + " pls..";
     } else {
       this.requestMessage = "Turn the vol. to " + this.goalVolume + " pls..";
     }
   }
 
-  generateGoal(min, max): number {
+
+  /**
+   * Randomize new volume goal.
+   * 
+   * @param {number} min min range
+   * @param {number} max max range
+   * @returns {number} random number
+   */
+  generateGoal(min: number, max: number): number {
     return Math.floor(Math.random()*(max-min+1)+min);
   }
 }

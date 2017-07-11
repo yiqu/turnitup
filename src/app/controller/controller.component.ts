@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { ScoreService } from '../shared/score.service';
 
+/**
+ * Controller component consists of volume icon control logic.
+ * 
+ */
 @Component({
   moduleId: module.id,
   selector: 'controller',
@@ -15,6 +19,7 @@ export class ControllerComponent {
   indicator: HTMLElement = null;
   shape: HTMLElement = null;
   input: any = null;
+  // control vars
   lock: boolean;
   charging: boolean;
   _charge: number;
@@ -26,12 +31,14 @@ export class ControllerComponent {
   /**
    * Constructor
    * 
+   * @param {ScoreService} scoreService Injected score service.
+   * 
    */
   constructor(public scoreService: ScoreService){}
 
 
   /**
-   * On init. Get the html elements after it has rendered on the page.
+   * On load up, get the html elements after it has rendered on the page.
    * 
    */
   ngOnInit() { 
@@ -51,7 +58,7 @@ export class ControllerComponent {
 
     // Decide if device is Touch or Mouse
     this.scoreService.isTouchDevice = this.isTouchDevice();
-   }
+  }
 
 
   /**
@@ -120,9 +127,7 @@ export class ControllerComponent {
     if (this.lock) { 
       return false; 
     }
-
     this.lock = true;
-
     // Reset volume
     this._charge = 0;
     this.charging = true;
@@ -145,7 +150,6 @@ export class ControllerComponent {
       this.shape.style.transform = `scale(${this._charge / 100})`;
       this.icon.style.transform  = `rotate(${-0.35 * this._charge}deg)`;
     };
-
     setTimeout(() => cycle(), 100);
   }
 
@@ -236,7 +240,6 @@ export class ControllerComponent {
     
     this.volumeSelected = this._charge;
     this.turnChange ++;
-    //console.log('your volume: '  + this.volumeSelected + '. Turn: '+this.turnChange);
   }
 
 
@@ -278,5 +281,4 @@ export class ControllerComponent {
     t -= 2;
     return c/2*(t*t*t + 2) + b;
   }
-
 }
