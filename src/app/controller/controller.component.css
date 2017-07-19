@@ -42,10 +42,19 @@ body {
       width: 85px;
     }
     #volume-slider {
-      width: 310px;
-  }
+      width: 320px;
+    }
 }
 
+/* ----------- iPhone 6+ ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) {
+    #volume-slider {
+      width: 320px;
+    }
+}
 
 
 /* disable outline around volume icon */
