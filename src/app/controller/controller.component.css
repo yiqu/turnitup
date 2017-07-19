@@ -10,6 +10,19 @@ body {
     width: 300px;
 }
 
+.volume-icon {
+  cursor: pointer;
+  height: 80px;
+  transform: rotate(0deg);
+  transform-origin: center left;
+  width: 72px;
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* ----------- iPhone 4 and 4S ----------- */
 @media only screen 
   and (min-device-width: 320px) 
@@ -19,18 +32,21 @@ body {
     }
 }
 
-.volume-icon {
-  cursor: pointer;
-  height: 60px;
-  transform: rotate(0deg);
-  transform-origin: center left;
-  width: 60px;
-  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
-  -webkit-touch-callout: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-tap-highlight-color: transparent;
+/* ----------- iPhone 6 ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) {
+    .volume-icon {
+      height: 85px;
+      width: 85px;
+    }
+    #volume-slider {
+      width: 310px;
+  }
 }
+
+
 
 /* disable outline around volume icon */
 .noselect {
