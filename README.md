@@ -8,6 +8,8 @@ Simple game that is both browser and mobile friendly. To play: https://yiqu.gith
 
 Install Angular-CLI `npm install -g @angular/cli`
 
+`cd` into project, `npm install`
+
 Run `ng serve` , navigate to `localhost:4200`
 
 ## Build
