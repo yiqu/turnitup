@@ -4,7 +4,7 @@
 
 Simple game that is both browser and mobile friendly. 
 
-Play here: https://yiqu.github.io/turnitup/
+**TO PLAY**: https://yiqu.github.io/turnitup/
 
 ## Fork and Run
 
