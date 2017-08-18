@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BodyModule } from './body/body.module';
 import { NotFoundModule } from './404/404.module';
 
+import { ScoreModule } from './body/scoreboard/score.module';
+import { TitleModule } from './body/title/title.module';
+import { ControllerModule } from './body/controller/controller.module';
 import 'hammerjs';
 
 @NgModule({
@@ -22,7 +25,10 @@ import 'hammerjs';
     BodyModule,
     FormsModule,
     HttpModule,
-    NotFoundModule
+    NotFoundModule,
+    ScoreModule,
+    TitleModule,
+    ControllerModule
   ],
 
   providers: [],
