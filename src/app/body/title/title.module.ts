@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from './title.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -8,7 +10,8 @@ import { TitleComponent } from './title.component';
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
 
   providers: [],

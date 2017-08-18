@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
-import { ControllerModule } from './controller/controller.module';
-import { ScoreModule } from './scoreboard/score.module';
-import { TitleModule } from './title/title.module';
+import { AppRoutingModule } from './app-routing.module';
+import { BodyModule } from './body/body.module';
+import { NotFoundModule } from './404/404.module';
 
 import 'hammerjs';
 
@@ -17,12 +17,12 @@ import 'hammerjs';
   ],
 
   imports: [
+    AppRoutingModule,
     BrowserModule,
-    ControllerModule,
+    BodyModule,
     FormsModule,
     HttpModule,
-    ScoreModule,
-    TitleModule
+    NotFoundModule
   ],
 
   providers: [],

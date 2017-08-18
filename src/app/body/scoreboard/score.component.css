@@ -1,13 +1,13 @@
 /* ----------- Desktop ----------- */
 .cat {
-  background-image: url(../../assets/cat3.png);
+  background-image: url(../../../assets/cat3.png);
   height: 260px;
   background-repeat: no-repeat;
   margin-left: -50px;
 }
 
 .cat-win {
-  background-image: url(../../assets/cat3-win.png);
+  background-image: url(../../../assets/cat3-win.png);
 }
 
 .request-message {
@@ -63,11 +63,11 @@
   and (min-device-width: 320px) 
   and (max-device-width: 480px) {
     .cat {
-      background-image: url(../../assets/cat4.png);
+      background-image: url(../../../assets/cat4.png);
       margin-left: -80px;
     }
     .cat-win {
-      background-image: url(../../assets/cat4-win.png);
+      background-image: url(../../../assets/cat4-win.png);
     }
 
     .cat-message {
@@ -102,11 +102,11 @@
   and (min-device-width: 375px) 
   and (max-device-width: 667px) {
     .cat {
-      background-image: url(../../assets/cat5.png);
+      background-image: url(../../../assets/cat5.png);
       margin-left: -50px;
     }
     .cat-win {
-      background-image: url(../../assets/cat5-win.png);
+      background-image: url(../../../assets/cat5-win.png);
     }
 
     .cat-message {
@@ -139,11 +139,11 @@
   and (min-device-width: 414px) 
   and (max-device-width: 736px) { 
     .cat {
-      background-image: url(../../assets/cat6.png);
+      background-image: url(../../../assets/cat6.png);
       margin-left: -50px;
     }
     .cat-win {
-      background-image: url(../../assets/cat6-win.png);
+      background-image: url(../../../assets/cat6-win.png);
     }
 
     .cat-message {

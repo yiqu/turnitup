@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScoreComponent } from './score.component';
-import { ScoreService } from '../shared/score.service';
-import { WinnerDisplayPipe } from '../pipes/score.pipe';
+import { ScoreService } from '../../shared/score.service';
+import { WinnerDisplayPipe } from '../../pipes/score.pipe';
 
 import { CdkTableModule } from '@angular/cdk';
 import { 

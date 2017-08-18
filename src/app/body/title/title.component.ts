@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ScoreService } from '../shared/score.service';
+import { ScoreService } from '../../shared/score.service';
 
 // App version
-const { version: appVersion } = require('../../../package.json')
+const { version: appVersion } = require('../../../../package.json')
 
 /**
  * Title component consists of title and game rules HTML.

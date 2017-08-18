@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ScoreService } from '../shared/score.service';
+import { ScoreService } from '../../shared/score.service';
 
 /**
  * Controller component consists of volume icon control logic.

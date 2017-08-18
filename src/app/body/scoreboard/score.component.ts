@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges, SimpleChange, ViewChild } from '@angular/core';
 import { MdSort } from '@angular/material';
-import { ResultDataStore } from '../shared/data-store.db';
-import { ResultDataSource } from '../shared/data-source.db';
-import { ScoreService } from '../shared/score.service';
+import { ResultDataStore } from '../../shared/data-store.db';
+import { ResultDataSource } from '../../shared/data-source.db';
+import { ScoreService } from '../../shared/score.service';
 
 /**
  * Score component consists of score calculation logic.

@@ -12,5 +12,7 @@ p {
 }
 
 .version {
-  font-size: 0.7rem;
+  font-size: 1rem;
+  font-family: 'Patrick Hand SC', cursive;
+  letter-spacing: 0.1rem;
 }
