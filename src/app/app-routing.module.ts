@@ -4,10 +4,7 @@ import { BodyComponent } from './body/body.component';
 import { NotFoundComponent } from './404/404.component';
 
 
-/**
- * Routing for app.
- * 
- */
+ //Routes for app.
 const routes: Routes = [
   { 
     path: '', 
@@ -29,6 +26,10 @@ const routes: Routes = [
 ];
 
 
+/**
+ * Routing module.
+ * 
+ */
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
