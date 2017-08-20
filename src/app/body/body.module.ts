@@ -7,8 +7,10 @@ import { ScoreModule } from './scoreboard/score.module';
 import { TitleModule } from './title/title.module';
 import { BodyComponent } from './body.component';
 
-import 'hammerjs';
 
+/**
+ * This class represents the game component.
+ */
 @NgModule({
   declarations: [
     BodyComponent
