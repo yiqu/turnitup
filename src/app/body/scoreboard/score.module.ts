@@ -4,7 +4,7 @@ import { ScoreComponent } from './score.component';
 import { ScoreService } from '../../shared/score.service';
 import { WinnerDisplayPipe } from '../../pipes/score.pipe';
 
-import { CdkTableModule } from '@angular/cdk';
+import { CdkTableModule } from '@angular/cdk/table';
 import { 
   MdCardModule, 
   MdSortModule, 
