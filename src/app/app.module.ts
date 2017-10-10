@@ -18,6 +18,7 @@ import 'hammerjs';
 
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     BodyModule,
     FormsModule,

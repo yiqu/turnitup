@@ -6,9 +6,9 @@ import { WinnerDisplayPipe } from '../../pipes/score.pipe';
 
 import { CdkTableModule } from '@angular/cdk/table';
 import { 
-  MdCardModule, 
-  MdSortModule, 
-  MdTableModule } from '@angular/material';
+  MatCardModule, 
+  MatSortModule, 
+  MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,9 @@ import {
   imports: [
     CommonModule,
     CdkTableModule,
-    MdCardModule,
-    MdSortModule,
-    MdTableModule
+    MatCardModule,
+    MatSortModule,
+    MatTableModule
   ],
 
   providers: [],

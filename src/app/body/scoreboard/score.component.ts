@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChange, ViewChild } from '@angular/core';
-import { MdSort } from '@angular/material';
+import { MatSort } from '@angular/material';
 import { ResultDataStore } from '../../shared/data-store.db';
 import { ResultDataSource } from '../../shared/data-source.db';
 import { ScoreService } from '../../shared/score.service';
@@ -39,8 +39,8 @@ export class ScoreComponent implements OnChanges {
   resultDataStore = new ResultDataStore();
   dataSource: ResultDataSource | null;
 
-  @ViewChild(MdSort) 
-  sort: MdSort;
+  @ViewChild(MatSort) 
+  sort: MatSort;
 
   /**
    * Constructor

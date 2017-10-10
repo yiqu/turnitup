@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ControllerComponent } from './controller.component';
 import { ScoreModule } from '../scoreboard/score.module';
 import { ScoreService } from '../../shared/score.service';
-import { MdButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { MdButtonModule } from '@angular/material';
 
   imports: [
     CommonModule,
-    MdButtonModule,
+    MatButtonModule,
     ScoreModule
   ],
 

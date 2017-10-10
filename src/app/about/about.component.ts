@@ -52,7 +52,7 @@ export class AboutComponent {
     {
       version: '1.3.0',
       date: new Date('10/10/17'),
-      changes: 'Chores'
+      changes: 'Chores: updated dependencies'
     }
   ];
 }

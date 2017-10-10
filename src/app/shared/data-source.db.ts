@@ -1,5 +1,5 @@
 import { DataSource } from '@angular/cdk/collections';
-import { MdSort } from '@angular/material';
+import { MatSort } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { ResultDataStore } from './data-store.db';
 import { UserResult } from './user-result.model';
@@ -17,7 +17,7 @@ import 'rxjs/add/operator/map';
  * should be rendered.
  */
 export class ResultDataSource extends DataSource<any> {
-  constructor(private _database: ResultDataStore, private _sort: MdSort) {
+  constructor(private _database: ResultDataStore, private _sort: MatSort) {
     super();
   }
 
@@ -25,7 +25,7 @@ export class ResultDataSource extends DataSource<any> {
   connect(): Observable<UserResult[]> {
     const displayDataChanges = [
       this._database.dataChange,
-      this._sort.mdSortChange,
+      this._sort.sortChange,
     ];
 
     return Observable.merge(...displayDataChanges).map(() => {
