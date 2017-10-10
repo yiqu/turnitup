@@ -48,6 +48,11 @@ export class AboutComponent {
       version: '1.2.0',
       date: new Date('8/18/17'),
       changes: 'Refactored file structure and added CHANGE LOG page'
+    },
+    {
+      version: '1.3.0',
+      date: new Date('10/10/17'),
+      changes: 'Chores'
     }
   ];
 }
