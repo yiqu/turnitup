@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  constructor() {}
+  constructor() {
+  }
     
   // change log information array
   changelog: Array<any> = [
@@ -67,6 +68,13 @@ export class AboutComponent {
       version: '1.3.0',
       date: new Date('10/10/17'),
       changes: 'Chores: updated dependencies',
+      externalLink: undefined,
+      linkUrl: null
+    },
+    {
+      version: '1.4.0',
+      date: new Date('11/01/17'),
+      changes: 'Chores: updated dependencies for Angular and Material',
       externalLink: undefined,
       linkUrl: null
     }

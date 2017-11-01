@@ -10,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./404.component.css']
 })
 export class NotFoundComponent {
-  constructor() {}
+  constructor() {
+  }
 }

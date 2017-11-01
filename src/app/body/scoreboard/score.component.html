@@ -11,29 +11,29 @@
 
 <p class="result-container wrap scoreboard">Scoreboard</p>
 <div class="result-container mat-elevation-z8 wrap">
-  <md-table #table class="table" [dataSource]="dataSource" mdSort>
+  <mat-table #table class="table" [dataSource]="dataSource" matSort>
 
     <!-- Turn Column -->
     <ng-container cdkColumnDef="turn">
-      <md-header-cell *cdkHeaderCellDef md-sort-header> Turn </md-header-cell>
-      <md-cell *cdkCellDef="let row" class="table-cell"> {{row.turn}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> Turn </mat-header-cell>
+      <mat-cell *cdkCellDef="let row" class="table-cell"> {{row.turn}} </mat-cell>
     </ng-container>
 
     <!-- Result Column -->
     <ng-container cdkColumnDef="result">
-      <md-header-cell *cdkHeaderCellDef md-sort-header> Result </md-header-cell>
-      <md-cell *cdkCellDef="let row" class="table-cell"> {{row.result}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> Result </mat-header-cell>
+      <mat-cell *cdkCellDef="let row" class="table-cell"> {{row.result}} </mat-cell>
     </ng-container>
 
     <!-- Off By Column -->
     <ng-container cdkColumnDef="difference">
-      <md-header-cell *cdkHeaderCellDef md-sort-header> Off By </md-header-cell>
-      <md-cell *cdkCellDef="let row" class="table-cell"> {{row.difference | winner}} </md-cell>
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header> Off By </mat-header-cell>
+      <mat-cell *cdkCellDef="let row" class="table-cell"> {{row.difference | winner}} </mat-cell>
     </ng-container>
 
 
-    <md-header-row *cdkHeaderRowDef="displayedColumns" class="header-table-row"></md-header-row>
-    <md-row *cdkRowDef="let row; columns: displayedColumns;" 
-      [ngClass]="row.difference==='0'?'table-row-green':'table-row'"></md-row>
-  </md-table>
+    <mat-header-row *cdkHeaderRowDef="displayedColumns" class="header-table-row"></mat-header-row>
+    <mat-row *cdkRowDef="let row; columns: displayedColumns;" 
+      [ngClass]="row.difference==='0'?'table-row-green':'table-row'"></mat-row>
+  </mat-table>
 </div>
